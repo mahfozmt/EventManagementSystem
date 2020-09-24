@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventMgt1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_Event">
+    <Key>
+      <PropertyRef Name="EventTypeId" />
+    </Key>
+    <Property Name="EventTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="EventMgt1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_Event" EntityType="Self.tbl_Event" />
+    <FunctionImport Name="sp_ViewSchedule" ReturnType="Collection(EventMgt1Model.sp_ViewSchedule_Result)" />
+  </EntityContainer>
+  <ComplexType Name="sp_ViewSchedule_Result">
+    <Property Type="Int32" Name="BookedEventId" Nullable="false" />
+    <Property Type="String" Name="Customer" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email_Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Mobile" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Event" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Start_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="End_Time" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Date___Time" Nullable="true" Precision="23" />
+  </ComplexType>
+</Schema>

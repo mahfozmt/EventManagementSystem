@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventMgt1ModelStoreContainer" CdmEntityContainer="EventMgt1Entities">
+    <EntitySetMapping Name="tbl_Event">
+      <EntityTypeMapping TypeName="EventMgt1Model.tbl_Event">
+        <MappingFragment StoreEntitySet="tbl_Event">
+          <ScalarProperty Name="EventTypeId" ColumnName="EventTypeId" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_ViewSchedule" FunctionName="EventMgt1Model.Store.sp_ViewSchedule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EventMgt1Model.sp_ViewSchedule_Result">
+          <ScalarProperty Name="BookedEventId" ColumnName="BookedEventId" />
+          <ScalarProperty Name="Customer" ColumnName="Customer" />
+          <ScalarProperty Name="Email_Address" ColumnName="Email Address" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Event" ColumnName="Event" />
+          <ScalarProperty Name="Start_Time" ColumnName="Start Time" />
+          <ScalarProperty Name="End_Time" ColumnName="End Time" />
+          <ScalarProperty Name="Date___Time" ColumnName="Date &amp; Time" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
